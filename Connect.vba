@@ -15,12 +15,13 @@ Function Recurse(sPath As String) As String
             If InStr(myFile.Name, "msmdsrv.port.txt") Then
                   Open myFile.Path For Input As #1
                    Port = Input$(5, 1)
-                   Cells(4, 10).Value = Port
+                   Cells(5, 2).Value = Port
                  Close #1
              ElseIf InStr(myFile.Name, "db.xml") Then
+             Debug.Print InStr(myFile.Name, ".")
                 
-                DB = Left(myFile.Name, Len(myFile.Name) - 9)
-                 Cells(5, 10).Value = DB
+                DB = Left(myFile.Name, InStr(myFile.Name, ".") - 1)
+                 Cells(6, 2).Value = DB
                 
             End If
         Next
@@ -59,3 +60,4 @@ Call Recurse("C:\Users\" & (Environ$("Username")) & "\AppData\Local\Microsoft\Po
     ActiveWorkbook.Connections("PBID").Refresh
 
 End Sub
+
