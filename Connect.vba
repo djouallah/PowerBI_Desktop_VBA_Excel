@@ -30,10 +30,10 @@ Function Recurse(sPath As String) As String
 End Function
 
 Sub RefreshSSASConnection()
-' developed by Matt Allington from http://exceleratorbi.com.au
-
 
 Call Recurse("C:\Users\" & (Environ$("Username")) & "\AppData\Local\Microsoft\Power BI Desktop\AnalysisServicesWorkspaces\")
+
+' developed by Matt Allington from http://exceleratorbi.com.au
 
 
     With ActiveWorkbook.Connections("PBID").OLEDBConnection
