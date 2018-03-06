@@ -1,3 +1,5 @@
+
+' You need to go into the VBE's Tools, References and place a check mark beside Microsoft Scripting Run-time.
 Global Port As String
 Global DB As String
 
